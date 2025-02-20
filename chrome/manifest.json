@@ -1,0 +1,31 @@
+
+{
+    "manifest_version": 3,
+    "name": "Proxy Authentication Helper",
+    "version": "1.0.0",
+    "description": "Automatically enters proxy password when authentication is required.",    
+    "permissions": [
+        "webRequest",
+        "webRequestAuthProvider",
+        "activeTab",
+        "scripting",
+        "proxy"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "externally_connectable": {
+        "matches": ["<all_urls>"]
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "match_about_blank": true,
+            "match_origin_as_fallback": true,
+            "js": ["content.js"]
+        }
+    ]
+}
