@@ -9,14 +9,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
 });
 chrome.webRequest.onAuthRequired.addListener(
-    function(details) {
-        return new Promise((resolve, reject) => {
-            console.log("auth. proxy: onAuthRequired!", details);
-            resolve({
-                authCredentials: authCredentials
-            });
+    function (details, callback) {
+        console.log("auth. proxy: onAuthRequired!", details, callback);
+        callback({
+            authCredentials: authCredentials
         });
     },
-    { urls: ["<all_urls>"] },
-    ['blocking']
+    {urls: ["<all_urls>"]},
+    ['asyncBlocking']
 );

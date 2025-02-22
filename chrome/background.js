@@ -5,7 +5,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === "auth_credentials") {
         authCredentials = message.authCredentials;
         console.log("auth. proxy: credentials received from web page:", message);
-        sendResponse({ status: "Success", data: "Message received!" });
+        sendResponse({ status: "Success", data: "auth. credentials received!" });
     }
 });
 chrome.webRequest.onAuthRequired.addListener(
