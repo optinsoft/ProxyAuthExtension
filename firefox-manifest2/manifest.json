@@ -1,13 +1,14 @@
 
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Proxy Authentication Helper",
     "version": "1.0.0",
     "description": "Automatically enters proxy password when authentication is required.",
     "permissions": [
         "webRequest",
         "webRequestBlocking",
-        "proxy"
+        "proxy",
+        "<all_urls>"
     ],
     "background": {
         "scripts": ["background.js"]

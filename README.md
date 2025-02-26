@@ -19,7 +19,7 @@ from pathlib import Path
 
 ```python
 browserOptions = webdriver.ChromeOptions()
-authPluginFile = Path('./ProxyAuthExtension-chrome-v1.0.zip').absolute().as_posix()
+authPluginFile = Path('./ProxyAuthExtension-chrome-manifest2-v1.1.zip').absolute().as_posix()
 browserOptions.add_extension(authPluginFile)
 browser = webdriver.Chrome(service=ChromeService(), options=browserOptions)
 ```
@@ -46,7 +46,7 @@ window.postMessage({type:"auth_credentials",authCredentials:{username:"%s",passw
 ```python
 browserOptions = webdriver.FirefoxOptions()
 browser = webdriver.Firefox(service=FirefoxService(), options=browserOptions)
-authPluginFile = Path('./ProxyAuthExtension-firefox-v1.0.zip').absolute().as_posix()
+authPluginFile = Path('./ProxyAuthExtension-firefox-manifest2-v1.1.zip').absolute().as_posix()
 browser.install_addon(authPluginFile, True)
 ```
 
